@@ -5,7 +5,7 @@ export async function findAll({completed}) {
   if(completed !== undefined){
     if(completed !== 'true' && completed !== 'false'){
       let error = new Error("Completed must be 'true' or 'false'");
-      error.status(400);
+      error.status = 400;
       throw error;
     }
     where.completed = completed === "true";
