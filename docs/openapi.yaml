@@ -18,6 +18,8 @@ paths:
       summary: List all tasks
       tags:
         - Tasks
+      parameters:
+        - $ref: '#/components/parameters/Completed'
       responses:
         '200':
           description: OK
@@ -92,3 +94,12 @@ components:
         completed:
           type: boolean
           example: false
+  parameters:
+    Completed:
+      name: completed
+      in: query
+      required: false
+      description: Sorts tasks by completion status
+      schema:
+        type: boolean
+        example: true
