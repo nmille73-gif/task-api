@@ -1,6 +1,7 @@
 import prisma from '../config/db.js';
 
 export async function findAll({completed}) {
+  const where = {};
   if(completed !== undefined){
     if(completed !== 'true' && completed !== 'false'){
       let error = new Error("Completed must be 'true' or 'false'");
